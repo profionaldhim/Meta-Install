@@ -11,15 +11,16 @@ white='\e[1;37m'
 yellow='\e[1;33m'
 echo ''
 echo ''
-echo -e $white '++++++++++++++++++++++++++++++++++++++++++'
-echo -e $white '| mmmm. mmmm.      II nnnnn. fffff   ooo |'
-echo -e $white '| mm. mm. mm.      II nn. n. ffuu   o   o|'
-echo -e $white '| mm.     mm. (()) II nn. n. ff.     ooo |'
-echo -e $white '|                                        |'
-echo -e $white '|   This Tool To install metasploit.    |'
-echo -e $white '|       =======================          |'
-echo -e $white '| from:  Yemen - whatsapp:+067733014747. |'
-echo -e $white '++++++++++++++++++++++++++++++++++++++++++'
+echo -e $white '++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+echo ""
+echo ""
+figlet "Meta-Install"
+echo ""
+echo -e $white '   This Tool To install metasploit.    '
+echo -e $white '       =======================          '
+echo -e $whote '    copy ®ight by Mohammed Info '
+echo -e $white ' from:  Yemen - whatsapp:+067733014747. '
+echo -e $white '+++++++++++++++++++++++++++++++++++++++++++++++++++++'
 echo "" 
 echo ""
 echo -e $white   "1- INSTALL METASPLOIT"
@@ -70,8 +71,7 @@ sleep 1
 dpkg --configure -a
 apt update && apt -y upgrade
 
-echo "
-"
+echo ""
 echo "Meta-Install is coming"
 sleep 1
 clear
@@ -213,20 +213,21 @@ echo "################################";
 sleep 3
 echo ""
 setterm -foreground blue
+gem install bundle
 gem install bundler
 sed 's|nokogiri (1.*)|nokogiri (1.8.0)|g' -i Gemfile.lock                                                     
 gem install nokogiri -v 1.8.0 -- --use-system-libraries
-
-#sed 's|grpc (.*|grpc (1.4.1)|g' -i $HOME/metasploit-framework/Gemfile.lock
-#gem unpack grpc -v 1.4.1
-#cd grpc-1.4.1
-#curl -LO https://raw.githubusercontent.com/grpc/grpc/v1.4.1/grpc.gemspec
-#curl -L https://raw.githubusercontent.com/Hax4us/Hax4us.github.io/master/extconf.patch
-#patch -p1 < extconf.patch
-#gem build grpc.gemspec
-#gem install grpc-1.4.1.gem
-#cd ..
-#rm -r grpc-1.4.1
+#####
+sed 's|grpc (.*|grpc (1.4.1)|g' -i $HOME/metasploit-framework/Gemfile.lock
+gem unpack grpc -v 1.4.1
+cd grpc-1.4.1
+curl -LO https://raw.githubusercontent.com/grpc/grpc/v1.4.1/grpc.gemspec
+curl -L https://raw.githubusercontent.com/Hax4us/Hax4us.github.io/master/extconf.patch
+patch -p1 < extconf.patch
+gem build grpc.gemspec
+gem install grpc-1.4.1.gem
+cd ..
+rm -r grpc-1.4.1
 
 echo
 setterm -foreground red
@@ -238,7 +239,8 @@ echo "######################################";
 setterm -foreground blue
 sleep 3
 echo ""
-cd $HOME/metasploit-framework                                                                                 bundle install -j5
+cd $HOME/metasploit-framework
+bundle install -j5
 $PREFIX/bin/find -type f -executable -exec termux-fix-shebang \{\} \;
 rm ./modules/auxiliary/gather/http_pdf_authors.rb
 if [ -e $PREFIX/bin/msfconsole ];then
@@ -276,12 +278,15 @@ pg_ctl -D $PREFIX/var/lib/postgresql start
 createuser msf
 createdb msf_database
 pg_ctl -D $PREFIX/var/lib/postgresql start
-rm -r $HOME/Meta-Install
-rm -r $HOME/metasploit-framework-4.16.16.tar.gz
+#rm -r $HOME/Meta-Install
+#rm -r $HOME/metasploit-framework-4.16.16.tar.gz
 
 cd $HOME/metasploit-framework
 gem install nokogiri -- --use-system-libraries
-
+#gem install bundle
+#gem install bundler
+apt install python2 -y
+pip2 install bundle
 clear
 setterm -foreground red
 echo "###########################################################################"
@@ -290,7 +295,15 @@ echo "Meta-Install : Your data base was created. Now you can active it with . . 
 echo
 echo "1- pg_ctl -D $PREFIX/var/lib/postgresql start"
 echo "2- gem install nokogiri -- --use-system-libraries"
-
+echo ""
+echo -e $green '#########################################'
+figlet "success ful"
+echo ""
+echo -e $green "Meta-Install"
+echo ""
+echo -e $white " whatsapp - +967733014747 - channel on Youtube :Mohammed Info "
+echo ""
+echo -e $green '###############################################'
 bash M-Install.sh
 fi
 if [ $name = 0 ]
