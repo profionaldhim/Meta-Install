@@ -387,9 +387,9 @@ sleep 1
 apt install python python2 -y
 apt install nano git curl -y
 apt install Perl -y
+cd $Home
 wget https://Auxilus.github.io/metasploit.sh
 bash metsploit.sh
-cd 
 cd metasploit-framework
 gem install bundle 
 gem install bundler 
