@@ -310,6 +310,7 @@ fi
 if [ $name = 2 ]
 then 
 clear
+cd $HOME
 echo ""
 echo "" 
 echo "Mohammed Info"
